@@ -4,6 +4,7 @@ import { LoginService } from './services/login.service';
 import { takeUntil } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LocalStorageHelper } from '../shared/helpers/local-storage.helper';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent extends SubscriptionCancel implements OnInit {
   public form: FormGroup = new FormGroup({});
   public loginEfect!: boolean;
-
+  public email!: string;
 
   constructor(
     private loginService: LoginService,
@@ -34,12 +35,19 @@ export class LoginComponent extends SubscriptionCancel implements OnInit {
       const password = this.form.controls['password'];
       this.loginService.login(email.value, password.value).pipe(takeUntil(this.destroy$)).subscribe((res) => {
         this.loginEfect = true;
+        LocalStorageHelper.setCurrentUser(email.value);
+        this.router.navigate(['/home']);
       },
       (error) => {
       });
     } else {
       console.error('O formulário não está inicializado corretamente.');
     }
+  }
+
+
+  setUnconfirmedMail() {
+
   }
 
   public register(){

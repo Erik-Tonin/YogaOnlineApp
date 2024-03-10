@@ -1,27 +1,32 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserModule } from './user/user.module';
-import { UserComponent } from './user/user.component';
-import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
 
-
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
-    LoginModule
+    LoginModule,
+    ReactiveFormsModule,
+    HomeModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
