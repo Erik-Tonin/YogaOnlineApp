@@ -1,0 +1,33 @@
+<ul class="menu-container">
+    <hr class="m-tb">
+    <div *ngFor="let item of filterMenuItemsByAdminStatus(menuItems, isAdmin)">
+        <div class="menu-item" (click)="changePageMenu(item)">
+            <span>
+                <div class="selected fade-in" *ngIf="isRouteActive(item.route) || isAnySubRouteActive(item)"></div>
+                <div *ngIf="item.icon">
+                    <!-- <i class="bi" [ngClass]="item.icon"></i> -->
+                </div>
+                <div *ngIf="(fixMenu | async)">
+                    {{ item.name }}
+                </div>
+            </span>
+        </div>
+
+        <div class="submenu" *ngIf="activeSubmenu === item.name && (fixMenu | async)">
+            <div *ngFor="let subItem of item.subMenuItems">
+                <div class="submenu-item" *ngIf="!subItem.url" (click)="subItem.subRoute && changePageSubmenu(subItem)">
+                    <div class="selected-submenu " [class.selected-submenu]="isRouteActive(subItem.subRoute)"></div>
+                    <span> {{ subItem.name }} </span>
+                </div>
+
+                <div *ngIf="subItem.url">
+                    <a class="submenu-url fade-in" [href]="subItem.url" target="_blank" rel="noopener noreferrer">
+                        {{ subItem.name }}
+                        <i class="bi bi-box-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ul>

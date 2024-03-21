@@ -1,0 +1,82 @@
+// @import "colors";
+
+// .menu-container {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+//   overflow-y: auto;
+//   height: 100%;
+// }
+
+// .menu-item {
+//   list-style: none;
+//   height: 40px;
+//   display: flex;
+//   align-items: center;
+//   gap: 10px;
+//   cursor: pointer;
+//   font-weight: 400;
+//   color: $bodycolor;
+//   width: fit-content;
+
+//   i {
+//     font-size: 22px;
+//   }
+
+//   span {
+//     display: flex;
+//     align-items: center;
+//     gap: 15px;
+//     font-weight: 500;
+//   }
+
+//   .selected {
+//     background-color: $primary;
+//     width: 4px;
+//     border-radius: 4px 0 0 4px;
+//     height: 40px;
+//   }
+// }
+
+// .submenu {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+//   padding-left: 20px;
+//   margin-top: 5px;
+//   .submenu-item {
+//     @extend .menu-item;
+//     height: fit-content;
+
+//     span {
+//       @extend span;
+//       font-size: 13px;
+//     }
+//   }
+
+//   // .selected-submenu {
+//   //   background-color: $primary;
+//   //   width: 3px;
+//   //   border-radius: 3px 0 0 3px;
+//   //   height: 20px;
+//   // }
+
+//   .selected-submenu {
+//     background-color: $primary;
+//     width: 6px;
+//     border-radius: 50px;
+//     height: 6px;
+//   }
+// }
+// //
+// .submenu-url {
+//   @extend .submenu;
+//   flex-direction: row;
+//   align-items: center;
+//   width: fit-content;
+
+//   &:hover {
+//     transition: all ease;
+//     color: $primary;
+//   }
+// }

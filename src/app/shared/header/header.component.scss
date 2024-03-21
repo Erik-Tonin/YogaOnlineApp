@@ -1,0 +1,37 @@
+.card-body {
+  border-radius: 0;
+  height: 62px;
+  overflow: hidden;
+  padding: 8px 15px;
+
+  &.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-header {
+  width: 120px;
+  height: 40px;
+}
+
+.icons-content {
+  display: flex;
+  gap: 10px;
+
+  i {
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

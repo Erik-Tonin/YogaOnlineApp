@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="range-container">
+    <div class="main-container">
+        <div class="menu-general-lateral scroll-touch" [ngClass]="{ 'menu-hidden': !(fixMenu | async)}">
+            <div class="menu-fixed-container">
+                <span (click)="menuFixed()">
+                    <i [ngClass]="(fixMenu | async) ? 'bi bi-pin-angle-fill' : 'bi bi-pin-angle'"></i>
+                </span>
+            </div>
+            <div class="over">
+                <app-menu [menuItems]="menuList"></app-menu>
+            </div>
+        </div>
+        <div class="content-home  fade-in">
+            <div class="card-container">
+                <div [ngClass]="(isHomePage()) ? '' : 'card-body overflow'">
+                    <ng-content></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
