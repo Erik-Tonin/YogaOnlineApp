@@ -3,21 +3,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../user/services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './home.component';
-import { HomeRoutingModule } from './home.routing';
+import { TeacherComponent } from './teacher.component';
+import { TeacherRoutingModule } from './teacher.routing';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [TeacherComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    TeacherRoutingModule,
     ReactiveFormsModule,
     SharedModule
   ],
   providers: [UserService],
   exports: [
-    HomeComponent,
+    TeacherComponent,
   ],
 })
-export class HomeModule {}
+export class TeacherModule {}

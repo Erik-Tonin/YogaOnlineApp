@@ -18,6 +18,5 @@ export class HomeService {
 
     public getByEmail(email: string):  Observable<User>{
         return this.http.get<User>(`${environment.URL_YogaOnline}/${this.path}/getByEmail?email=${email}`);
-    }
-    
+    }   
   }

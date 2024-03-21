@@ -14,4 +14,8 @@ export class LocalStorageHelper {
   public static setCurrentUser(currentUser: string): void {
     localStorage.setItem('yogaCurrentUser', currentUser);
   }
+
+  public static removeAll(): void {
+    localStorage.clear();
+  }
 }
