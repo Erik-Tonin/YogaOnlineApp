@@ -20,6 +20,7 @@ export class RegisterComponent  extends SubscriptionCancel implements OnInit {
   public birthday!: Date;
   public password!: string;
   public passwordRepeat!: string;
+  public file!: File;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -50,6 +51,7 @@ export class RegisterComponent  extends SubscriptionCancel implements OnInit {
     formData.set('birthday', formatDate(this.form.value.birthday, 'yyyy-MM-dd', navigator.language));
     formData.append('password', this.form.controls['password'].value);
     formData.append('confirmPassword', this.form.controls['confirmPassword'].value);
+    formData.append('file', this.file);
 
     return formData;
   }
@@ -68,4 +70,12 @@ export class RegisterComponent  extends SubscriptionCancel implements OnInit {
       (error) => {
       });
   }
+
+  public onFileChanged(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement.files && inputElement.files.length > 0) {
+      this.file = inputElement.files[0];
+    }
+  }
+  
 }
