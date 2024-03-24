@@ -27,6 +27,7 @@ export class HomeComponent  extends SubscriptionCancel implements OnInit {
   public getByEmail(email: string){
     this.homeService.getByEmail(email).pipe(takeUntil(this.destroy$)).subscribe((response) => {
       this.user = response;
+      this.user.imageUrl;
     });
   }
 

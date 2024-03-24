@@ -19,6 +19,10 @@
                         <p>Cadastre-se</p>
       
                         <div class="row">
+                          <div class="mb-3">
+                            <label for="formFileMultiple" class="form-label">Escolha uma imagem de perfil</label>
+                            <input class="form-control" type="file" id="formFilePhoto"  (change)="onFileChanged($event)">
+                          </div>
                           <div class="col-md-6">
                             <div class="form-outline mb-4">
                               <label class="form-label" for="name">Nome Completo</label>
