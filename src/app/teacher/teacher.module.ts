@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TeacherComponent } from './teacher.component';
 import { TeacherRoutingModule } from './teacher.routing';
 import { SharedModule } from '../shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [TeacherComponent],
