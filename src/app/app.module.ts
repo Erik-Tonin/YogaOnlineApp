@@ -10,6 +10,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { HomeModule } from './home/home.module';
 import { TeacherModule } from './teacher/teacher.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localePt);
 
@@ -25,7 +26,8 @@ registerLocaleData(localePt);
     LoginModule,
     ReactiveFormsModule,
     HomeModule,
-    TeacherModule
+    TeacherModule,
+    NgbModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' },],
   bootstrap: [AppComponent]
